@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Expenses Calculator</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://timez.eu/wp-content/uploads/App-arbeitszeit-1024x683.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        .calculator {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5cm;
+            max-width: 400px;
+            /* margin: auto; */
+            padding: 20px;
+            border: 1px solid #030303;
+            border-radius: 5px;
+            background-color: #0af8f8;
+            box-shadow: 3px 5px 5px ;
+        }
+        .calculator label {
+            /* display: block; */
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .calculator input[type="number"] {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .calculator button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .calculator button:hover {
+            background-color: #0056b3;
+        }
+        .calculator #total {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <label for="computers">Amount spent on computers:</label>
+        <input type="number" id="computers" value="15000">
+        <label for="tables">Amount spent on tables:</label>
+        <input type="number" id="tables" value="20000">
+        <label for="chairs">Amount spent on chairs:</label>
+        <input type="number" id="chairs" value="25000">
+        <button onclick="calculateTotal()">Calculate Total</button>
+        <div id="total"></div>
+
+    </div>
+    <script>
+        function calculateTotal() {
+            var computers = parseFloat(document.getElementById('computers').value);
+            var tables = parseFloat(document.getElementById('tables').value);
+            var chairs = parseFloat(document.getElementById('chairs').value);
+    
+            var total = computers + tables + chairs;
+    
+            document.getElementById('total').innerText = "Total amount spent: $" + total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvEyJUxd0pqDrVQBlRo558It7ooG_b-3NqgQ&usqp=CAU");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #calculator {
+      
+      background-color: #ffffff46;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      background-color: rgba(0, 255, 255, 0.466);
+      box-shadow: 0px 0px 10px 0 rgba(95, 75, 75, 0.603);
+
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+  <title>Interest Calculator</title>
+</head>
+<body>
+
+  <div id="calculator">
+    <h1>Interest Calculator</h1>
+
+    <label for="principal">Principal Amount ($):</label>
+    <input type="number" id="principal" min="0" required>
+    
+    <label for="rate">Annual Interest Rate (%):</label>
+    <input type="number" id="rate" min="0" max="100" required>
+
+    <label for="time">Time (years):</label>
+    <input type="number" id="time" min="0" required>
+
+    <button onclick="calculateAmount()">Calculate</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateAmount() {
+      let principal = parseFloat(document.getElementById('principal').value) || 0;
+      let rate = parseFloat(document.getElementById('rate').value) || 0;
+      let time = parseFloat(document.getElementById('time').value) || 0;
+
+      let interest = (principal * rate * time) / 100;
+      let totalAmount = principal + interest;
+
+      document.getElementById('result').innerHTML = 'Total Amount after ' + time + ' years: $' + totalAmount.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>

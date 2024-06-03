@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark Details</title>
+<link rel="stylesheet" href="as5.css">
+<style>
+    body {
+        font-weight: 700;
+        width: fit-content;
+        font-family: Arial, sans-serif;
+        background-image: url("https://static.toiimg.com/thumb/msid-99620278,imgsize-16106,width-400,resizemode-4/99620278.jpg"); 
+        background-repeat: no-repeat;
+        height: 500px;
+        background-size: cover;
+    }
+    
+    .boxmath{
+            display: flex;
+            margin:130px;
+            margin-left: 7cm;
+        }
+
+        .second{
+            margin-left: 3cm;
+        }
+
+        input{
+            width: 5cm;
+            height: 0.70cm;
+        }
+
+
+    
+   
+</style>
+
+</head>
+<body>
+    <div class=" boxmath">
+        <header class="first">
+  <h2>Enter Subject Marks</h2>
+  <input type="number" id="tamil" placeholder="tamil"><br><br>
+  <input type="number" id="english" placeholder="english"><br><br>
+  <input type="number" id="maths" placeholder="maths"><br><br>
+  <input type="number" id="science" placeholder="science"><br><br>
+  <input type="number" id="computer" placeholder="computer"><br><br>
+  <button onclick="calculateMarks()">Calculate</button><br><br>
+
+
+</header>
+  
+  <footer class="second">
+  <h2>Mark Details</h2>
+  <div id="marksOutput"></div>
+
+  </footer>
+
+</div>
+
+  
+
+  <script>
+   function calculateMarks() {
+  var marks = [
+    parseInt(document.getElementById('tamil').value),
+    parseInt(document.getElementById('english').value),
+    parseInt(document.getElementById('maths').value),
+    parseInt(document.getElementById('science').value),
+    parseInt(document.getElementById('computer').value)
+  ];
+
+  var marksOutput = "Subject Marks:<br>";
+  for (var i = 0; i < marks.length; i++) {
+    marksOutput += "Subject " + (i + 1) + ": " + marks[i] + "<br>";
+  }
+
+  var totalMarks = marks.reduce((acc, curr) => acc + curr, 0);
+  var averageMarks = totalMarks / marks.length;
+
+  // Finding the highest mark
+  var highestMark = Math.max(...marks);
+
+  marksOutput += "<br>Total Marks: " + totalMarks + "<br>";
+  marksOutput += "Average Marks: " + averageMarks.toFixed(2) + "<br>";
+  marksOutput += "Highest Mark: " + highestMark + "<br>";
+
+  document.getElementById('marksOutput').innerHTML = marksOutput;
+}
+
+  </script>
+</body>
+</html>

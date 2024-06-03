@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            margin: 50px;
+            padding: 9px;
+            background-image: url("https://thumbs.dreamstime.com/z/time-tax-computation-accounting-services-concept-businessperson-wooden-cubes-above-calculator-dark-background-118276683.jpg"); 
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .box{
+            background-color: rgb(236, 8, 46);
+            border: 1px solid;
+            padding: 10px;
+            margin-top:  100px;
+            margin-left: 10px;
+            height: 7cm;
+            border-radius: 4px;
+            width: 60%;
+            margin-left: 6cm;
+        
+        }
+
+        label {
+            margin-right: 10px;
+            padding: 4px;
+            
+        }
+
+        input {
+            width: 70px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        button{
+            background-color: rgb(43, 10, 226);
+            height: 0.76cm ;
+            border-radius: 5px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            background-color: rgb(188, 248, 21);
+            padding: 20px;
+            margin-left: 10px;
+            border-radius: 4px;
+            width: 60%;
+            margin-left: 6cm;
+        }
+    </style>
+</head>
+<body>
+   <div class="box">
+    <label for="people">Number of People Watching:</label>
+    <input type="number" id="people" placeholder="Enter number">
+    <label for="emptySeats">Number of Empty Seats:</label>
+    <input type="number" id="emptySeats" placeholder="Enter number">
+    <button onclick="calculateTotalSeats()">Calculate Total Seats</button>
+
+   </div> 
+   <div id="result"></div>
+   <script>
+    function calculateTotalSeats() {
+        var peopleWatching = parseInt(document.getElementById('people').value);
+        var emptySeats = parseInt(document.getElementById('emptySeats').value);
+
+        if (isNaN(peopleWatching) || isNaN(emptySeats)) {
+            alert("Please enter valid numbers.");
+            return;
+        }
+
+        var totalSeats = peopleWatching + emptySeats;
+        document.getElementById('result').innerHTML = "Total Seats in the stadium: " + totalSeats;
+    }
+</script>
+</body>
+</html>

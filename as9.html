@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number Checker</title>
+    <style>
+        body{
+            background-image: url("https://cdn.mos.cms.futurecdn.net/dBFuYGruGdT95wFwHEu5VM-650-80.jpg.webp");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family:sans-serif;
+            font-size: x-large;
+            background-color: lightblue;
+  animation: mymove 10s infinite;
+  
+        }   
+
+        @keyframes mymove {
+  50% {padding: 100px;}
+}
+
+        .boxmath{
+            margin-left: 6.50cm;
+            text-align: center;
+            margin-top: 4cm;
+            background-color: rgba(47, 4, 240, 0.466);
+            width: 60%;
+            padding: 10px;
+            height: 7cm;
+            border: 1px solid rgb(3, 216, 253);
+
+        }
+        button{
+            margin-top: 0.60cm;
+            background-color: rgba(72, 73, 72, 0.459);
+            height: 0.80cm;
+            width: 2cm;
+            border-color: rgba(8, 8, 8, 0.459) ;
+            opacity: 1.0;
+        }
+        .button.hover{
+            opacity: 0.4;
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <div class="boxmath">
+        <h2>Armstrong Number Checker</h2>
+        <label for="numInput">Enter the input value:</label>
+        <input type="number" id="numInput">
+        <button onclick="checkArmstrong()">Check</button>
+        <p id="result"></p>
+
+    </div>
+    <script>
+         function checkArmstrong() {
+        var num = document.getElementById("numInput").value;
+        var numStr = num.toString();
+        var len = numStr.length;
+        var sum = 0;
+
+        for (var i = 0; i < len; i++) {
+            sum += Math.pow(parseInt(numStr[i]), len);
+        }
+
+        if (sum == num) {
+            document.getElementById("result").innerHTML = num + " is an Armstrong number";
+        } else {
+            document.getElementById("result").innerHTML = num + " is not an Armstrong number";
+        }
+    }
+    </script>
+</body>
+</html>

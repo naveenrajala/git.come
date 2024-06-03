@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive to Negative Numbers</title>
+    <link rel="stylesheet" href="as8.css">
+    <style>
+         body {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://mccoymart.com/post/wp-content/uploads/2020/03/Home-Design-and-Plans-According-to-Vastu-Shastra.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .container {
+    background-color: #fff;
+    max-width: 90%;
+    padding: 20px 30px 20px;
+    text-align: center;
+    background: rgba(178, 182, 182, 0.573);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+  }
+  input[type="number"] {
+    font-size: 14px;
+    width: 130px;
+    padding: 4px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #4b4b4b;
+  }
+  button{
+    width: 80px;
+    height: 27px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #094afd;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover{
+    background-color: #d8bd26;
+  }
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Positive to Negative Numbers</h2>
+        <label for="inputNumber">Enter a number:</label>
+        <input type="number" id="inputNumber">
+        <button onclick="printNumbers()">Print</button>
+        <p id="result"></p>
+
+    </div>
+    <script>
+        function printNumbers() {
+    var inputNumber = parseInt(document.getElementById('inputNumber').value);
+    var result = "";
+
+    for (var i = -inputNumber; i <= inputNumber; i++) {
+      result += i + ", ";
+    }
+
+    // Remove the last comma and space
+    result = result.slice(0, -2);
+
+    document.getElementById('result').textContent = result;
+  }
+    </script>
+</body>
+</html>

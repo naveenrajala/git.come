@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers</title>
+    <link rel="stylesheet" href="as7.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("https://1.bp.blogspot.com/-jJkfee3xJgs/VCo61DrDeZI/AAAAAAAAp80/PpKgBxZVWOE/s1600/new-home-design.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .container {
+    width: 70%;
+    color: #f1eff0;
+    background-color: #3a0efd;
+    padding: 20px 10px 40px;
+    border-radius: 10px;
+    background: rgba(150, 151, 152, 0.288);
+    box-shadow: 0 2px 4px rgba(12, 10, 8, 0.1);
+    border: 2px solid #050004;
+  }
+  .even-numbers {
+    font-size: 24px;
+    color: #fff9fe;
+    margin-top: 50px;
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Even Numbers from 0 to 100</h1>
+        <div class="even-numbers" id="even-numbers"></div>
+
+    </div>
+    <script>
+         // Function to print even numbers from 0 to 100
+  function printEvenNumbers() {
+    let evenNumbers = "";
+    for (let i = 0; i <= 100; i += 2) {
+      evenNumbers += i + ", ";
+    }
+    // Remove the last comma and space
+    evenNumbers = evenNumbers.slice(0, -2);
+    document.getElementById('even-numbers').textContent = evenNumbers;
+  }
+
+  // Call the function when the page loads
+  printEvenNumbers();
+    </script>
+</body>
+</html>
